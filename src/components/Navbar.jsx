@@ -1,12 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
-//import search_icon_light from '../assets/search-white.png'
-//import search_icon_dark from '../assets/search-black.png'
-//import toggle_light from '../assets/night.png'
-//import toggle_dark from '../assets/day.png'
+import search_icon_light from '../assets/search-white.png'
+import search_icon_dark from '../assets/search-black.png'
+import toggle_light from '../assets/night.png'
+import toggle_dark from '../assets/day.png'
 
-function Navbar() {
+function Navbar({theme, setTheme}) {
+
+    const toggleMode = () => {
+        theme == 'light' ? setTheme('dark') : setTheme('light');
+    }
 
     return (
         <div className='navbar'>
@@ -21,8 +25,10 @@ function Navbar() {
 
             <div className='search-box'>
                 <input type='text' placeholder='Search'/>
-                <img alt='toggle icon' className='toggle-icon'/>
+                <img src={theme == 'light' ? search_icon_light : search_icon_dark} alt='search icon'/>
             </div>
+
+            <img onClick={()=>{toggleMode()}} src={theme == 'light' ? toggle_light : toggle_dark} alt='toggle icon' className='toggle-icon'/>
         </div>
     )
 }
