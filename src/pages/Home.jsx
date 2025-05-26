@@ -10,7 +10,8 @@ function Home() {
         fetch("https://podcast-api.netlify.app")
             .then(res => res.json())
             .then(data => {
-                setPodcast(data);
+                const sortedData = data.sort((a, b) => a.title.localeCompare(b.title));
+                setPodcast(sortedData);
                 setIsLoading(false);
             })
             .catch(err => {
