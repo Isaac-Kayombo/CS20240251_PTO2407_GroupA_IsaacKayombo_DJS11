@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar'
+import Home from './pages/Home'
 
 function App() {
   const currentTheme = localStorage.getItem('currentTheme');
@@ -15,7 +16,7 @@ function App() {
       <div className={`container ${theme}`}>
         <Navbar theme={theme} setTheme={setTheme} />
         <Routes>
-          
+          <Route path='/' element={<Home />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
