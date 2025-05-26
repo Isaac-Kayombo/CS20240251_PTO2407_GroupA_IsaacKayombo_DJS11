@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Home.css'
 
 function Home() {
     const [podcast, setPodcast] = React.useState([]);
@@ -37,10 +38,10 @@ function Home() {
     });
 
     const podcastElements = sortedPodcasts.map(podcast => (
-        <div key={podcast.id} className='podcast-title'>
+        <div key={podcast.id} className='podcast-tile'>
             <Link to={`/podcast/${podcast.id}`}>
                 <img src={podcast.image} />
-                
+
                 <div className='podcast-info'>
                     <h2>{podcast.title}</h2>
                     <p>{podcast.seasons} Seasons</p>
