@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
+import EpisodePlayer from '../components/EpisodePlayer';
 
 
 function PodcastDetails() {
@@ -42,6 +43,9 @@ function PodcastDetails() {
                             {season.episodes.map((episode, index2) => (
                                 <li key={index2}>
                                     <strong>{episode.title}</strong>
+                                    <EpisodePlayer 
+                                        episode={episode}
+                                    />                
                                 </li>
                             ))}
                         </ul>

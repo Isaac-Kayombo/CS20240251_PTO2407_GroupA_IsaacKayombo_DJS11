@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EpisodePlayer() {
+function EpisodePlayer({episode}) {
     const audioRef = React.useRef(null);
     const [isPlaying, setIsPlaying] = React.useState(false);
 
@@ -40,7 +40,7 @@ function EpisodePlayer() {
                 {isPlaying ? "⏸️ Pause" : "▶️ Play"}
             </button>
             <button>❤</button>
-            <audio ref={audioRef} src={EpisodePlayer.file}/>
+            <audio ref={audioRef} src={episode.file}/>
         </div>
     )
 }
