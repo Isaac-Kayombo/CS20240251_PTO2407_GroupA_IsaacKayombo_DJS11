@@ -3,14 +3,24 @@ import { Link } from 'react-router-dom'
 
 function Home() {
     const [podcast, setPodcast] = React.useState([]);
+    const [isLLoading, setIsLoading] = React.useState(true);
+    const [error, setError] = React.useState(null);
 
     React.useEffect(() => {
         fetch("https://podcast-api.netlify.app")
             .then(res => res.json())
             .then(data => {
-                setPodcast(data)
+                setPodcast(data);
+                setIsLoading(false);
             })
+            .catch(err => {
+                setError(err.message);
+                setIsLoading(false);
+            });
     }, []);
+
+    if (isLLoading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;   
 
     const podcastElements = podcast.map(podcast => (
         <div key={podcast.id} className='podcast-title'>
