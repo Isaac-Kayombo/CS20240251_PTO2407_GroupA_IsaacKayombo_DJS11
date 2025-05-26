@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EpisodePlayer({episode}) {
+function EpisodePlayer({ episode, showTitle, seasonTitle }) {
     const audioRef = React.useRef(null);
     const [isPlaying, setIsPlaying] = React.useState(false);
 
@@ -12,6 +12,26 @@ function EpisodePlayer({episode}) {
             audio.pause();
         } else {
             audio.play();
+        }
+    };
+
+    const handleFavorite = () => {
+        const existingFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+        const newFavorite = {
+            ...episode,
+            showTitle,
+            seasonTitle,
+            addedAt: new Date().toISOString()
+        };
+
+        const isDuplicate = existingFavorites.some(
+            (ep) => ep.title === episode.title && ep.showTitle === showTitle
+        );
+
+        if (!isDuplicate) {
+            existingFavorites.push(newFavorite);
+            localStorage.setItem("favorites", JSON.stringify(existingFavorites));
         }
     };
 
@@ -39,7 +59,7 @@ function EpisodePlayer({episode}) {
             <button className='play-button' onClick={togglePlay}>
                 {isPlaying ? "⏸️ Pause" : "▶️ Play"}
             </button>
-            <button>❤</button>
+            <button onClick={handleFavorite}>❤</button>
             <audio ref={audioRef} src={episode.file}/>
         </div>
     )
