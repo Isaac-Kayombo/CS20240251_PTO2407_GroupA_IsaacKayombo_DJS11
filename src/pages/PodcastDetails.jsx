@@ -45,6 +45,8 @@ function PodcastDetails() {
                                     <strong>{episode.title}</strong>
                                     <EpisodePlayer 
                                         episode={episode}
+                                        showTitle={podcast.title}
+                                        seasonTitle={season.title}
                                     />                
                                 </li>
                             ))}
