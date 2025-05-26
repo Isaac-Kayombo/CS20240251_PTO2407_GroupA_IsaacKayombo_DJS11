@@ -5,14 +5,27 @@ import { useParams } from 'react-router-dom';
 function PodcastDetails() {
     const { id } = useParams();
     const [podcast, setPodcast] = React.useState(null);
+    const [loading, setLoading] = React.useState(true);
+    const [error, setError] = React.useState(null);
 
     React.useEffect(() => {
         fetch(`https://podcast-api.netlify.app/id/${id}`)
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) throw new Error("Network error");
+                return res.json();
+            })
             .then(data => {
                 setPodcast(data);
+                setLoading(false);
             })
+            .catch(err => {
+                setError(err.message);
+                setLoading(false);
+            });
     }, [id]);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>
 
     return (
         <div className='podcast-detail'>
