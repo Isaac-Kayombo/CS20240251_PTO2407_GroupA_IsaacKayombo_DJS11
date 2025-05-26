@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
+import PodcastDetail from "./pages/podcastDetail";
 
 function App() {
   const currentTheme = localStorage.getItem('currentTheme');
@@ -17,6 +18,7 @@ function App() {
         <Navbar theme={theme} setTheme={setTheme} />
         <Routes>
           <Route path='/' element={<Home />}></Route>
+          <Route path='/podcast/:id' element={<PodcastDetail />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
