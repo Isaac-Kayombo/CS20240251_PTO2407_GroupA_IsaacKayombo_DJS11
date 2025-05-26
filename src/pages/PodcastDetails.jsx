@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 
 
-function PodcastDetail() {
+function PodcastDetails() {
     const { id } = useParams();
     const [podcast, setPodcast] = React.useState(null);
 
@@ -39,4 +39,4 @@ function PodcastDetail() {
     )
 }
 
-export default PodcastDetail;
+export default PodcastDetails;
