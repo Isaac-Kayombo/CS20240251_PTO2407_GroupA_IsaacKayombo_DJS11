@@ -15,7 +15,7 @@ function Navbar({theme, setTheme}) {
     return (
         <div className='navbar'>
             <div className='logo'>
-                <h1>POD🎙</h1>
+                <h1>ClearCast</h1>
             </div>
 
             <nav className='nav-links'>
