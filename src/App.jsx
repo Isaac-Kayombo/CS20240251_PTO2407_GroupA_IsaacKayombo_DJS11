@@ -3,6 +3,7 @@ import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import PodcastDetails from "./pages/PodcastDetails";
+import Favorites from "./pages/Favorites";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/podcast/:id' element={<PodcastDetails />}></Route>
+          <Route path='/favorites' element={<Favorites />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
