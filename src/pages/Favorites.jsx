@@ -9,6 +9,17 @@ function Favorites() {
         setFavorites(JSON.parse(localStorage.getItem("favorites")) || [])
     }, []);
 
+    const handleDelete = (episodeToDelete) => {
+    const updatedFavorites = favorites.filter(
+        (episode) =>
+            episode.title !== episodeToDelete.title ||
+            episode.showTitle !== episodeToDelete.showTitle ||
+            episode.seasonTitle !== episodeToDelete.seasonTitle
+        );
+        setFavorites(updatedFavorites);
+        localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    };
+
     const sortedFavorites = [...favorites].sort((a, b) => {
         if (sortOrder === "A-Z") {
             return a.title.localeCompare(b.title);
@@ -40,7 +51,7 @@ function Favorites() {
                         <div>
                             <small>Added on: {new Date(episode.addedAt).toLocaleString()}</small>
                         </div>
-                        <button>🗑</button>
+                        <button onClick={() => handleDelete(episode)}>🗑</button>
                     </li>
                 ))}
             </ul>
