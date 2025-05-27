@@ -21,6 +21,14 @@ function Favorites() {
         }
     });
 
+    // Group by showTitle and seasonTitle
+    const grouped = sortedFavorites.reduce((acc, episode) => {
+        const key = `${episode.showTitle} - ${episode.seasonTitle}`;
+        if (!acc[key]) acc[key] = [];
+        acc[key].push(episode);
+        return acc;
+    }, {});
+
 
     const FavoriteElements = Object.entries(grouped).map(([groupTitle, episodes]) => (
         <div key={groupTitle}>
