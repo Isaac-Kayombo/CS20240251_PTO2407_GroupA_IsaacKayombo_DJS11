@@ -96,3 +96,38 @@ a:hover {
     text-decoration: underline;
     text-decoration-color: rgb(181, 181, 181);
 }
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px 10px;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .search-box {
+        width: 90%;
+        max-width: none;
+    }
+
+    .search-box input {
+        width: 100%;
+        max-width: none;
+    }
+
+    .toggle-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
