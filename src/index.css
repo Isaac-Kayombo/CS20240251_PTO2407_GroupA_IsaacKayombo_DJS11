@@ -8,10 +8,10 @@
 .container {
     width: 100vw;
     min-height: 100vh;
-    background:  #87CEEB;
+    background:  linear-gradient(to right, blue , gray);
     transition: 0.5s;
 }
 
 .container.dark {
-    background: #222;
+    background: linear-gradient(to right, black , gray);
 }
