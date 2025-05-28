@@ -49,7 +49,10 @@ function Favorites() {
                         <div>
                             <small>Added on: {new Date(episode.addedAt).toLocaleString()}</small>
                         </div>
-                        <button onClick={() => handleDelete(episode)}>🗑</button>
+                        <button 
+                            onClick={() => handleDelete(episode)}
+                            className="delete-button"
+                        >DELETE</button>
                     </li>
                 ))}
             </ul>

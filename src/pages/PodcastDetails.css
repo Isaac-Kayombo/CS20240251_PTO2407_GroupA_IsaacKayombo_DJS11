@@ -64,6 +64,34 @@
     align-items: center;
 }
 
+.play-button {
+    background-color: #5293be;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.play-button:hover {
+    background-color: #1d3f55;
+}
+
+.delete-button {
+    background-color: #5293be;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.delete-button:hover {
+    background-color: #1d3f55;
+}
+
 .heart-button {
     color: #666;
     transition: color 0.3s ease;
@@ -73,6 +101,10 @@
     cursor: pointer;
 }
 
+.heart-button.favorited {
+    color: red;
+}
+
 .loader-container {
   display: flex;
   justify-content: center;
@@ -80,10 +112,6 @@
   height: 100vh;
   background-color: #f0f0f0;
   margin: 0;
-}
-
-.heart-button.favorited {
-    color: red;
 }
 
 .loader {
