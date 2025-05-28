@@ -58,24 +58,19 @@
     color: #000;
 }
 
-.podcast-detail button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-}
-
-.podcast-detail button:hover {
-    background-color: #2980b9;
-}
-
 .episode-player {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+}
+
+.heart-button {
+    color: #666;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 .loader-container {
@@ -85,6 +80,10 @@
   height: 100vh;
   background-color: #f0f0f0;
   margin: 0;
+}
+
+.heart-button.favorited {
+    color: red;
 }
 
 .loader {
