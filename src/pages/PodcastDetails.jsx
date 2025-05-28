@@ -25,7 +25,7 @@ function PodcastDetails() {
             });
     }, [id]);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <div className='loader-container'><p className='loader'></p></div>
     if (error) return <p>Error: {error}</p>
 
     return (
