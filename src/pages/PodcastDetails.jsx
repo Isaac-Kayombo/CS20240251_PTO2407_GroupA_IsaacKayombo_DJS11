@@ -3,12 +3,16 @@ import { useParams } from 'react-router-dom';
 import EpisodePlayer from '../components/EpisodePlayer';
 import './PodcastDetails.css'
 
+
+// DEFINING PODCAST_DETAILS COMPONENT 
 function PodcastDetails() {
+    // STATE HOOKS FOR PODCAST DATA, LOADING STATE, ERROR STATE, AND GETS ID PARAMETER
     const { id } = useParams();
     const [podcast, setPodcast] = React.useState(null);
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState(null);
 
+    // HOOK TO FETCH PODCAST DATA WHEN COMPONENT MOUNTS OR WHEN 'id' CHANGES
     React.useEffect(() => {
         fetch(`https://podcast-api.netlify.app/id/${id}`)
             .then(res => {
@@ -25,9 +29,11 @@ function PodcastDetails() {
             });
     }, [id]);
 
+    // Shows loading spinner while data is being fetched / Shows error message if there's an issue
     if (loading) return <div className='loader-container'><p className='loader'></p></div>
     if (error) return <p>Error: {error}</p>
 
+    // RENDERS PODCAST DETAILS ONCE DATA IS LOADED
     return (
         <div className='podcast-detail'>
             <h1>{podcast.title}</h1>
