@@ -22,7 +22,7 @@ function Home() {
             });
     }, []);
 
-    if (isLLoading) return <p>Loading...</p>;
+    if (isLLoading) return <div className='loader-container'><p className='loader'></p></div>
     if (error) return <p>Error: {error}</p>;
     
     const sortedPodcasts = [...podcast].sort((a, b) => {
