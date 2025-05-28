@@ -55,6 +55,9 @@
     color: #666;
     margin-top: 4px;
 }
+/*==============================================*/
+
+/** SORT DROPDOWN STYLES **/
 
 .sort-dropdown {
     margin: 20px 0;
@@ -86,6 +89,9 @@
     border-color: #007BFF;
     outline: none;
 }
+/*====================================*/
+
+/* LOADING ANIMATION */
 
 .loader-container {
     display: flex;

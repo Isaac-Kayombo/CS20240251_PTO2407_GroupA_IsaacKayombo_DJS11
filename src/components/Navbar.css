@@ -1,4 +1,4 @@
-/* NAVBAR STYLES*/
+/*** NAVBAR STYLES ***/
 
 .navbar {
     width: 100%;
@@ -67,6 +67,9 @@ a:hover {
     width: 20px;
     cursor: pointer;
 }
+/*================================= */
+
+/** DARK MODE STYLES **/
 
 .dark .navbar {
     background: #000;
@@ -96,6 +99,9 @@ a:hover {
     text-decoration: underline;
     text-decoration-color: rgb(181, 181, 181);
 }
+/*=================================*/
+
+/** MEDIA QUERIES **/
 
 @media screen and (max-width: 768px) {
     .navbar {
