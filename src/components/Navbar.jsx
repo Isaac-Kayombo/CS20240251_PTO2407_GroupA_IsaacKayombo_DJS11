@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import search_icon_light from '../assets/search-white.png'
@@ -6,12 +5,15 @@ import search_icon_dark from '../assets/search-black.png'
 import toggle_light from '../assets/night.png'
 import toggle_dark from '../assets/day.png'
 
+// DEFINING NAVBAR COMPONENT
 function Navbar({theme, setTheme}) {
 
+    // TODDLES THEME BETWEEN 'LIGHT' AND 'DARK'
     const toggleMode = () => {
         theme == 'light' ? setTheme('dark') : setTheme('light');
     }
 
+    // RENDERS NAVBAR COMPONENT
     return (
         <div className='navbar'>
             <div className='logo'>
