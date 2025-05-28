@@ -2,18 +2,21 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
 
+// DEFINING HOME COMPONENT 
 function Home() {
+    // STATE HOOKS FOR PODCAST DATA, LOADING STATE, ERROR STATE, AND SORT ORDER
     const [podcast, setPodcast] = React.useState([]);
-    const [isLLoading, setIsLoading] = React.useState(true);
+    const [isLoading, setIsLoading] = React.useState(true);
     const [error, setError] = React.useState(null);
     const [sortOrder, setSortOrder] = React.useState("asc");
 
+    // HOOK TO FETCH PODCAST DATA WHEN COMPONENT MOUNTS
     React.useEffect(() => {
         fetch("https://podcast-api.netlify.app")
             .then(res => res.json())
             .then(data => {
                 const sortedData = data.sort((a, b) => a.title.localeCompare(b.title));
-                setPodcast(sortedData);
+                setPodcast(sortedData); // storing data in state
                 setIsLoading(false);
             })
             .catch(err => {
@@ -22,9 +25,11 @@ function Home() {
             });
     }, []);
 
-    if (isLLoading) return <div className='loader-container'><p className='loader'></p></div>
+     // Shows loading spinner while data is being fetched / Shows error message if there's an issue
+    if (isLoading) return <div className='loader-container'><p className='loader'></p></div>
     if (error) return <p>Error: {error}</p>;
-    
+
+    // SORTS PODCASTS TO SELECTED SORT ORDER (TITLE OR UPDATED DATE)
     const sortedPodcasts = [...podcast].sort((a, b) => {
         if (sortOrder === "asc") {
             return a.title.localeCompare(b.title);
@@ -37,6 +42,7 @@ function Home() {
         }
     });
 
+    // GENERATES PODCAST TILES FOR EACH PODCAST IN THE SORTED LIST
     const podcastElements = sortedPodcasts.map(podcast => (
         <div key={podcast.id} className='podcast-tile'>
             <Link to={`/podcast/${podcast.id}`}>
@@ -55,6 +61,7 @@ function Home() {
         </div>
     ))
 
+    // RENDERS MAIN PODCAST LIST WITH SORTING DROPDOWN
     return (
         <div className='podcast-list-container'>
             <h1>Explore All Podcasts</h1>
