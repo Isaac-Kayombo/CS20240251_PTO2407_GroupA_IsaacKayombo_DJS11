@@ -7,6 +7,7 @@ import Favorites from "./pages/Favorites";
 
 
 function App() {
+  // GETS CURRENT THEME FROM LOCAL STORAGE
   const currentTheme = localStorage.getItem('currentTheme');
   const [theme, setTheme] = useState(currentTheme ? currentTheme : 'light');
 
@@ -14,6 +15,7 @@ function App() {
     localStorage.setItem('currentTheme', theme);
   }, [theme])
 
+  // WRAPS APP WITH BROWSER ROUTER FOR ROUTING
   return (
     <BrowserRouter>
       <div className={`container ${theme}`}>
@@ -28,4 +30,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
