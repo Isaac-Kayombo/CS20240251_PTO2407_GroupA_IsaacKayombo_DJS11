@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import EpisodePlayer from '../components/EpisodePlayer';
-import './PodcastDetails.css'
+import '../styles/PodcastDetails.css'
 
 
 // DEFINING PODCAST_DETAILS COMPONENT 

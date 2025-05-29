@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import './Navbar.css'
+import '../styles/Navbar.css'
 import search_icon_light from '../assets/search-white.png'
 import search_icon_dark from '../assets/search-black.png'
 import toggle_light from '../assets/night.png'
