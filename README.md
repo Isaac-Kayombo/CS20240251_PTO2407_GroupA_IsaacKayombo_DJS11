@@ -1,4 +1,4 @@
-# 🎧 PODCAST APP
+# 🎧 ClearCast PODCAST APP
 
 Welcome to ClearCast, a modern and intuitive application for discovering and listening to your favorite podcasts. Whether you're into storytelling, news, tech, personal growth, or music, ClearCast brings ideal listening experiences to your fingertips
 
