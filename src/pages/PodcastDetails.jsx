@@ -31,7 +31,7 @@ function PodcastDetails() {
 
     // Shows loading spinner while data is being fetched / Shows error message if there's an issue
     if (loading) return <div className='loader-container'><p className='loader'></p></div>
-    if (error) return <p>Error: {error}</p>
+    if (error) return <div className='error-message'><p>Error: {error}</p></div>
 
     // RENDERS PODCAST DETAILS ONCE DATA IS LOADED
     return (

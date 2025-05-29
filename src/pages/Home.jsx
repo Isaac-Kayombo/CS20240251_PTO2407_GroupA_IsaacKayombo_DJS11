@@ -27,7 +27,7 @@ function Home() {
 
      // Shows loading spinner while data is being fetched / Shows error message if there's an issue
     if (isLoading) return <div className='loader-container'><p className='loader'></p></div>
-    if (error) return <p>Error: {error}</p>;
+    if (error) return <div className='error-message'><p>Error: {error}</p></div>
 
     // SORTS PODCASTS TO SELECTED SORT ORDER (TITLE OR UPDATED DATE)
     const sortedPodcasts = [...podcast].sort((a, b) => {
