@@ -63,5 +63,5 @@ Make sure you have the following installed:
 ## 📫 CONTACT
 If you have any quetions, suggestions or contributes:
 
-	- Email: [isaackayombo41@gmail.com](mailto:isaackayombo41@gmail.com)
-	- GitHub: [Isaac-Kayombo](https://github.com/Isaac-Kayombo)
+	- Email: isaackayombo41@gmail.com
+	- GitHub: @Isaac-Kayombo
